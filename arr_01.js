@@ -3,26 +3,26 @@
 
 // push --> Daten rein ... (+)          <------------------------
 
-let arr = [];
-output(arr);
-arr.push("Ich");
-output(arr);
-arr.push("Bin");
-output(arr);
-arr.push("Dein");
-output(arr);
-arr.push("Vater");
-output(arr);
+// let arr = [];
+// output(arr);
+// arr.push("Ich");
+// output(arr);
+// arr.push("Bin");
+// output(arr);
+// arr.push("Dein");
+// output(arr);
+// arr.push("Vater");
+// output(arr);
 
-// // pop() --> Daten raus (-)          <-------------------------
-output(arr.pop());
-output(arr);
-output(arr.pop());
-output(arr);
-output(arr.pop());
-output(arr);
-output(arr.pop());
-output(arr);
+// // // pop() --> Daten raus (-)          <-------------------------
+// output(arr.pop());
+// output(arr);
+// output(arr.pop());
+// output(arr);
+// output(arr.pop());
+// output(arr);
+// output(arr.pop());
+// output(arr);
 
 
 
@@ -40,7 +40,7 @@ const controls = ["<", "</", ">"];
 const tags = ["html","head","head","body","h1","h1","p","p","body","html"];
 let stack = [];
 
-// output(getHTML());
+output(getHTML());
 function getHTML() {
 
     let htmlStr = "";
@@ -60,7 +60,21 @@ function getHTML() {
 
 // Modul: open || close
 function isOpenTag(tag) {
-    return false;
+
+// ??? mitgebrachter tag gleich dem tag oben auf dem Stapel ?
+
+    // const cond = (stack.indexOf(tag) == -1); // tag ist neu!
+    const cond = (tag != stack[stack.length-1]); // tag liegt oben!
+
+    if (cond) {
+        stack.push(tag);
+        output(stack);
+        return true;
+    } else {
+        stack.pop();
+        output(stack);
+        return false;
+    }
 }
 
 // Modul: Zusammenbau: <tagStr> --> Tests:
