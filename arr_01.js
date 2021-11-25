@@ -1,3 +1,31 @@
+/*********   Theorie   **********/
+// push() / pop()
+
+// push --> Daten rein ... (+)          <------------------------
+
+let arr = [];
+output(arr);
+arr.push("Ich");
+output(arr);
+arr.push("Bin");
+output(arr);
+arr.push("Dein");
+output(arr);
+arr.push("Vater");
+output(arr);
+
+// // pop() --> Daten raus (-)          <-------------------------
+output(arr.pop());
+output(arr);
+output(arr.pop());
+output(arr);
+output(arr.pop());
+output(arr);
+output(arr.pop());
+output(arr);
+
+
+
 /*********   CODE CHALLENGE HTML **********/
 
 /*
@@ -12,7 +40,7 @@ const controls = ["<", "</", ">"];
 const tags = ["html","head","head","body","h1","h1","p","p","body","html"];
 let stack = [];
 
-output(getHTML());
+// output(getHTML());
 function getHTML() {
 
     let htmlStr = "";
